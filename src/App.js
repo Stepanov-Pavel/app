@@ -1,23 +1,19 @@
-import logo from './logo.svg';
 import './App.css';
+import MenuAppBar from './attic/MenuAppBar';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <MenuAppBar />
+      <div>
+        Lorem
+      </div>
+      <div>
+        Lorem ipsum
+      </div>
+      <div>
+        Lorem ipsum fish
+      </div>
     </div>
   );
 }
