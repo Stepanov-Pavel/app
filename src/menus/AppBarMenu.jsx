@@ -30,7 +30,7 @@ export default function AppBarMenu() {
     return (
         <Box sx={{ flexGrow: 1 }}>
             <AppBar position="static" sx={{ background: '#4C4745' }}>
-                <Toolbar>
+                <Toolbar sx={{ mx: 20 }}>
                     <IconButton
                         size="large"
                         edge="start"
