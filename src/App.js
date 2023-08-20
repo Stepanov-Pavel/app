@@ -1,15 +1,15 @@
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import './App.css';
-import AppBarMenu from './menus/AppBarMenu';
-import InfoPage from './pages/InfoPage';
+import AppBar from './menus/AppBarMenu';
+import Info from './pages/InfoPage';
 
 function App() {
   return (
     <div className="App">
-      <AppBarMenu />
+      <AppBar />
       <BrowserRouter>
         <Routes>
-          <Route path="info-page" element={<InfoPage />} />
+          <Route path="info" element={<Info />} />
         </Routes>
       </BrowserRouter>
     </div>

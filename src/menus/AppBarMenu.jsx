@@ -6,11 +6,11 @@ import Typography from '@mui/material/Typography';
 import IconButton from '@mui/material/IconButton';
 import MenuIcon from '@mui/icons-material/Menu';
 import AccountCircle from '@mui/icons-material/AccountCircle';
-import Stonesk_Logo from '../menus/image/stonesklogo.jpg';
+import STONESK_LOGO from '../menus/image/stonesklogo.jpg';
 import ExitToAppIcon from '@mui/icons-material/ExitToApp';
 import ErrorOutlineIcon from '@mui/icons-material/ErrorOutline';
-import LeftDrawerMenu from './LeftDrawerMenu';
-import RightDrawerMenu from './RightDrawerMenu';
+import LeftDrawer from './LeftDrawerMenu';
+import RightDrawer from './RightDrawerMenu';
 import { Tooltip } from '@mui/material';
 
 export default function AppBarMenu() {
@@ -43,7 +43,7 @@ export default function AppBarMenu() {
                         </Tooltip>
                     </IconButton>
                     <Box sx={{ flexGrow: 1 }}>
-                        <img src={Stonesk_Logo} alt="stonesklogo" />
+                        <img src={STONESK_LOGO} alt="stonesklogo" />
                     </Box>
                     <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
                         Название страницы
@@ -77,8 +77,8 @@ export default function AppBarMenu() {
                     </IconButton>
                 </Toolbar>
             </AppBar>
-            <LeftDrawerMenu opened={leftDrawerOpen} opener={setLeftDrawerOpen} />
-            <RightDrawerMenu opened={rightDrawerOpen} opener={setRightDrawerOpen} />
+            <LeftDrawer opened={leftDrawerOpen} opener={setLeftDrawerOpen} />
+            <RightDrawer opened={rightDrawerOpen} opener={setRightDrawerOpen} />
         </Box>
     );
 }
