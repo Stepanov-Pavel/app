@@ -9,7 +9,7 @@ import ConstructionIcon from '@mui/icons-material/Construction';
 import HandymanIcon from '@mui/icons-material/Handyman';
 import CarpenterIcon from '@mui/icons-material/Carpenter';
 
-export default function LeftDrawer({ opened, opener }) {
+export default function LeftDrawerMenu({ opened, opener }) {
     const toggleDrawer = () => {
         opener(false);
     };

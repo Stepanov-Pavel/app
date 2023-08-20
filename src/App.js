@@ -1,15 +1,15 @@
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import './App.css';
-import MenuAppBar from './attic/MenuAppBar';
-import InfoPage from './pages/infopage/InfoPage';
+import AppBar from './menus/AppBarMenu';
+import Info from './pages/InfoPage';
 
 function App() {
   return (
     <div className="App">
-      <MenuAppBar />
+      <AppBar />
       <BrowserRouter>
         <Routes>
-          <Route path="info-page" element={<InfoPage />} />
+          <Route path="info" element={<Info />} />
         </Routes>
       </BrowserRouter>
     </div>

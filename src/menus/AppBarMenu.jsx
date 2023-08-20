@@ -6,14 +6,14 @@ import Typography from '@mui/material/Typography';
 import IconButton from '@mui/material/IconButton';
 import MenuIcon from '@mui/icons-material/Menu';
 import AccountCircle from '@mui/icons-material/AccountCircle';
-import Stonesk_Logo from '../attic/image/stonesklogo.jpg';
+import STONESK_LOGO from '../menus/image/stonesklogo.jpg';
 import ExitToAppIcon from '@mui/icons-material/ExitToApp';
 import ErrorOutlineIcon from '@mui/icons-material/ErrorOutline';
-import LeftDrawer from '../leftwing/LeftDrawer';
-import RightDrawer from '../leftwing/RightDrawer';
+import LeftDrawer from './LeftDrawerMenu';
+import RightDrawer from './RightDrawerMenu';
 import { Tooltip } from '@mui/material';
 
-export default function MenuAppBar() {
+export default function AppBarMenu() {
     const [leftDrawerOpen, setLeftDrawerOpen] = React.useState(false);
     const [rightDrawerOpen, setRightDrawerOpen] = React.useState(false);
 
@@ -30,7 +30,7 @@ export default function MenuAppBar() {
     return (
         <Box sx={{ flexGrow: 1 }}>
             <AppBar position="static" sx={{ background: '#4C4745' }}>
-                <Toolbar>
+                <Toolbar sx={{ mx: 20 }}>
                     <IconButton
                         size="large"
                         edge="start"
@@ -38,10 +38,12 @@ export default function MenuAppBar() {
                         sx={{ mr: 2 }}
                         onClick={handleLeftDrawerOpen}
                     >
-                        <MenuIcon />
+                        <Tooltip title="Меню">
+                            <MenuIcon />
+                        </Tooltip>
                     </IconButton>
                     <Box sx={{ flexGrow: 1 }}>
-                        <img src={Stonesk_Logo} alt="stonesklogo" />
+                        <img src={STONESK_LOGO} alt="stonesklogo" />
                     </Box>
                     <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
                         Название страницы
