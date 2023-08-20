@@ -38,7 +38,9 @@ export default function AppBarMenu() {
                         sx={{ mr: 2 }}
                         onClick={handleLeftDrawerOpen}
                     >
-                        <MenuIcon />
+                        <Tooltip title="Меню">
+                            <MenuIcon />
+                        </Tooltip>
                     </IconButton>
                     <Box sx={{ flexGrow: 1 }}>
                         <img src={Stonesk_Logo} alt="stonesklogo" />
