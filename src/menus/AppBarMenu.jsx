@@ -6,14 +6,14 @@ import Typography from '@mui/material/Typography';
 import IconButton from '@mui/material/IconButton';
 import MenuIcon from '@mui/icons-material/Menu';
 import AccountCircle from '@mui/icons-material/AccountCircle';
-import Stonesk_Logo from '../attic/image/stonesklogo.jpg';
+import Stonesk_Logo from '../menus/image/stonesklogo.jpg';
 import ExitToAppIcon from '@mui/icons-material/ExitToApp';
 import ErrorOutlineIcon from '@mui/icons-material/ErrorOutline';
-import LeftDrawer from '../leftwing/LeftDrawer';
-import RightDrawer from '../leftwing/RightDrawer';
+import LeftDrawerMenu from './LeftDrawerMenu';
+import RightDrawerMenu from './RightDrawerMenu';
 import { Tooltip } from '@mui/material';
 
-export default function MenuAppBar() {
+export default function AppBarMenu() {
     const [leftDrawerOpen, setLeftDrawerOpen] = React.useState(false);
     const [rightDrawerOpen, setRightDrawerOpen] = React.useState(false);
 
@@ -75,8 +75,8 @@ export default function MenuAppBar() {
                     </IconButton>
                 </Toolbar>
             </AppBar>
-            <LeftDrawer opened={leftDrawerOpen} opener={setLeftDrawerOpen} />
-            <RightDrawer opened={rightDrawerOpen} opener={setRightDrawerOpen} />
+            <LeftDrawerMenu opened={leftDrawerOpen} opener={setLeftDrawerOpen} />
+            <RightDrawerMenu opened={rightDrawerOpen} opener={setRightDrawerOpen} />
         </Box>
     );
 }

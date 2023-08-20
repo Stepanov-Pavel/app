@@ -4,7 +4,7 @@ import Drawer from '@mui/material/Drawer';
 import { Avatar, Divider, List, ListItem, ListItemButton, ListItemIcon, ListItemText, Stack, Typography } from '@mui/material';
 import SettingsSuggestIcon from '@mui/icons-material/SettingsSuggest';
 
-export default function RightDrawer({ opened, opener }) {
+export default function RightDrawerMenu({ opened, opener }) {
     const toggleDrawer = () => {
         opener(false);
     };
