@@ -1,4 +1,3 @@
-import * as React from 'react';
 import Box from '@mui/material/Box';
 import { Paper, Stack, Typography } from '@mui/material';
 

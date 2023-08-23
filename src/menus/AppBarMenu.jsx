@@ -1,4 +1,3 @@
-import * as React from 'react';
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
 import Toolbar from '@mui/material/Toolbar';
@@ -12,20 +11,43 @@ import ErrorOutlineIcon from '@mui/icons-material/ErrorOutline';
 import LeftDrawer from './LeftDrawerMenu';
 import RightDrawer from './RightDrawerMenu';
 import { Tooltip } from '@mui/material';
+import { useEffect, useState } from 'react';
+import { useLocation, useNavigate } from 'react-router-dom';
 
 export default function AppBarMenu() {
-    const [leftDrawerOpen, setLeftDrawerOpen] = React.useState(false);
-    const [rightDrawerOpen, setRightDrawerOpen] = React.useState(false);
+    const location = useLocation();
+    const navigate = useNavigate();
+
+    const [leftDrawerOpen, setLeftDrawerOpen] = useState(false);
+    const [rightDrawerOpen, setRightDrawerOpen] = useState(false);
+    const [pageName, setPageName] = useState("");
+    const [infoIconColor, setInfoIconColor] = useState("");
 
     const handleMenu = () => {
         alert("Меню в разработке! Спасибо!");
     };
+    const handleInfoPageOpen = () => {
+        navigate("info");
+    };
+    const handleMainPageOpen = () => {
+        navigate("main");
+    };
     const handleLeftDrawerOpen = () => {
-        setLeftDrawerOpen(true)
+        setLeftDrawerOpen(true);
     };
     const handleRightDrawerOpen = () => {
-        setRightDrawerOpen(true)
+        setRightDrawerOpen(true);
     };
+
+    useEffect(() => {
+        if (location.pathname.includes("main")) {
+            setPageName("Главная");
+            setInfoIconColor("inherit");
+        } else if (location.pathname.includes("info")) {
+            setPageName("Инфа о приложении");
+            setInfoIconColor("warning");
+        }
+    }, [location]);
 
     return (
         <Box sx={{ flexGrow: 1 }}>
@@ -42,11 +64,11 @@ export default function AppBarMenu() {
                             <MenuIcon />
                         </Tooltip>
                     </IconButton>
-                    <Box sx={{ flexGrow: 1 }}>
+                    <Box sx={{ cursor: 'pointer' }} onClick={handleMainPageOpen}>
                         <img src={STONESK_LOGO} alt="stonesklogo" />
                     </Box>
-                    <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
-                        Название страницы
+                    <Typography variant="h6" sx={{ flexGrow: 1 }} align="center">
+                        {pageName}
                     </Typography>
                     <IconButton
                         size="large"
@@ -59,11 +81,11 @@ export default function AppBarMenu() {
                     </IconButton>
                     <IconButton
                         size="large"
-                        onClick={handleMenu}
+                        onClick={handleInfoPageOpen}
                         color="inherit"
                     >
                         <Tooltip title="Инфо">
-                            <ErrorOutlineIcon />
+                            <ErrorOutlineIcon color={infoIconColor} />
                         </Tooltip>
                     </IconButton>
                     <IconButton
